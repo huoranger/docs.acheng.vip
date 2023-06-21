@@ -5,6 +5,7 @@ import { head } from './config/head';
 import { markdown } from './config/markdown';
 import { themeConfig } from './config/theme';
 
+
 export default withMermaid(
   defineConfig({
     lang: metaData.lang,
@@ -25,6 +26,7 @@ export default withMermaid(
       },
     },
     themeConfig, // 主题配置
+    
   }),
 );
 

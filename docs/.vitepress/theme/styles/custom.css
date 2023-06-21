@@ -124,10 +124,10 @@ body {
 }
 
 code {
-    font-family:  SFMono,misans, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-family:  SFMono,misans, SF Mono,Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 .VPDoc h1, .VPDoc h2,.VPDoc h3, .VPDoc h4, .VPDoc h5,.VPDoc h6 {
-    font-family: ubuntu, fira code, misans, "hmeng", hm, '思源宋体' !important;
+    font-family: SFMono, misans, "hmeng", hm, '思源宋体' !important;
 }
 /* .aside,.VPSidebar {
 
@@ -321,7 +321,7 @@ body {
 }
 
 h1 {
-  padding-top: 0px !important;
+  margin-top: 0px !important;
 }
 
 .VPNavBar.has-sidebar .content-body, .VPNavBar.fill .content-body {
