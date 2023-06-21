@@ -3,14 +3,25 @@ import { sync } from 'fast-glob';
 import * as matter from 'gray-matter';
 
 export const sidebar: DefaultTheme.Config['sidebar'] = {
-  '/categories/issues/': getItemsByDate("categories/issues"),
-  '/categories/fragments/': getItemsByDate("categories/fragments"),
-  '/categories/solutions/': getItemsByDate("categories/solutions"),
-  '/categories/tools/': getItemsByDate("categories/tools"),
+// '/categories/issues/': getItemsByDate("categories/issues"),
+  // '/categories/fragments/': getItemsByDate("categories/fragments"),
+  // '/categories/solutions/': getItemsByDate("categories/solutions"),
+  // '/categories/tools/': getItemsByDate("categories/tools"),
 
   '/courses/java/': getItems("courses/java"),
   '/courses/mysql/': getItems("courses/mysql"),
-  '/courses/mybatis/': getItems("courses/mybatis"),
+    '/courses/mybatis/': getItems("courses/mybatis"),
+    '/courses/frontend/': getItems("courses/frontend"),
+    '/courses/backend/': getItems("courses/backend"),
+    // '/courses/database/': getItems("courses/database"),
+    '/courses/database/01-MySQL': getItems("courses/database/01-MySQL"),
+    '/courses/interview/': getItems("courses/interview"),
+    '/courses/middleware/': getItems("courses/middleware"),
+    '/courses/operation/': getItems("courses/operation"),
+
+    '/courses/backend/basic/': getItems("courses/backend/basic"),
+    '/courses/backend/framework/': getItems("courses/backend/framework"),
+    
 }
 
 /**

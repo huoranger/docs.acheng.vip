@@ -1,0 +1,441 @@
+/* 灰度模式 */
+/*html {
+  filter: grayscale(95%);
+  -webkit-filter: grayscale(95%);
+  -moz-filter: grayscale(95%);
+  -ms-filter: grayscale(95%);
+  -o-filter: grayscale(95%);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=.95);
+}*/
+
+
+@font-face {
+  font-family: "hm";
+  src: url("/font/hm.woff2");
+}
+
+@font-face {
+  font-family: "hmeng";
+  src: url("/font/hmeng.woff2");
+}
+
+@font-face {
+  font-family: "misans";
+  src: url("/font/MiSans-Regular.ttf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "misans";
+  src: url("/font/MiSans-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "fira code";
+  src: url("/font/FiraCode-Regular-1.ttf");
+}
+
+@font-face {
+  font-family: "ubuntu";
+  src: url("/font/Ubuntu-R.ttf");
+}
+@font-face {
+  font-family: "ubuntu";
+  src: url("/font/Ubuntu-B.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "ubuntu mono";
+  src: url("/font/ubuntuMono-B.woff");
+  font-weight: bold;
+
+}
+@font-face {
+  font-family: "ubuntu mono";
+  src: url("/font/ubuntuMono-R.ttf");
+
+}
+
+@font-face {
+  font-family: "gb2312";
+  src: url("/font/gb2312.ttf");
+}
+
+@font-face {
+  font-family: 'lora';
+  src: url('/font/SF-Pro-Text-Regular.otf');
+}
+
+@font-face {
+  font-family: 'SY';
+  src: url('/font/SY.otf');
+}
+
+@font-face {
+  font-family: 'milant';
+  src: url('/font/milant.ttf');
+}
+@font-face {
+  font-family: 'msyh-en';
+  src: url('/font/msyh.ttf');
+}
+
+@font-face {
+  font-family: 'Amstelvar';
+  font-display: swap;
+  src: url('/font/Amstelvar-Roman-VF.woff2') format('woff2-variations'),
+      url('/font/Amstelvar-Roman-VF.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 50% 125%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amstelvar';
+  font-display: swap;
+  src: url('/font/Amstelvar-Italic-VF.woff2') format('woff2-variations'),
+      url('/font/Amstelvar-Italic-VF.woff2') format("woff2");
+  font-weight: 100 900;
+  font-stretch: 50% 125%;
+  font-style: italic;
+}
+
+body {
+  font-size: 15px;
+  font-family:  SF Mono, misans, "hmeng", hm, '思源宋体' !important;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono',misans, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+.VPDoc h1, .VPDoc h2,.VPDoc h3, .VPDoc h4, .VPDoc h5,.VPDoc h6 {
+  font-family: ubuntu, fira code, misans, "hmeng", hm, '思源宋体' !important;
+}
+/* .aside,.VPSidebar {
+
+  font-family:ubuntu mono, fira code, misans, "hmeng", hm, '思源宋体' !important;
+
+} */
+
+/* 平滑滚动 */
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #a8a8a8;
+  background-clip: padding-box;
+  border: 3px solid transparent;
+  border-radius: 5px;
+}
+
+#VPContent.has-sidebar {
+  padding-left: var(--vp-sidebar-width) !important;
+}
+
+/* logo */
+/* @media(min-width:1280px) {
+  .VPDoc .aside {
+      display: none !important;
+  }
+}
+
+@media(min-width:1440px) {
+  .VPDoc:not(.has-sidebar) .content {
+      max-width: inherit !important;
+  }
+
+  .VPDoc .aside {
+      display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .VPDoc {
+      padding-top: 10px !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .content {
+      padding: 0 !important;
+  }
+
+  .VPDoc:not(.has-sidebar) .content {
+      max-width: inherit !important;
+  }
+
+  .VPDocAsideOutline .content {
+      padding-left: 14px !important;
+  }
+
+  .VPDoc {
+      padding-top: 10px !important;
+  }
+
+} */
+
+/* for aside end */
+/* theme reset end */
+
+/*tags and archives page style*/
+.article {
+  padding: 4px 0 4px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-o {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  /* background-color: var(--li-dot-color); */
+}
+
+
+.date {
+  /* color: var(--date-color); */
+  font-family: var(--date-font-family);
+}
+
+/*mobile*/
+@media screen and (max-width: 720px) {
+  .VPDoc {
+      padding-bottom: 20px !important;
+  }
+
+  .vp-doc h1 {
+      font-size: 1.25rem !important;
+  }
+
+  .article {
+      padding: 4px;
+  }
+
+  .title-o {
+      margin-right: 4px;
+  }
+
+  .titleDiv {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 17em;
+  }
+}
+
+.logo {
+  height: 44px !important;
+  margin-bottom: 0.4rem;
+}
+
+/* 文章宽度 */
+.content-container {
+  max-width: unset !important;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+.VPDoc > .container > .content {
+  padding: 0 !important;
+}
+
+/* pre, code, kbd, samp {
+  font-family: var(--vp-font-family-mono);
+} */
+
+.vp-doc h2 {
+  margin: 15px 0 0;
+  padding-top: 10px;
+  border-top: none;
+}
+
+.vp-doc h3,h4,h5 {
+  margin: 10px 0 0;
+}
+
+.vp-doc h4 {
+  font-size: 18px;
+}
+
+.VPDoc .content-container img {
+  border-radius: 5px;
+}
+
+/* slim scroll bar for windows based web browsers - works on firefox */
+* {
+  scrollbar-color: var(--vp-c-gutter) var(--vp-button-alt-bg);
+  scrollbar-width: thin;
+}
+
+/* slim scroll bar for windows based web browsers - works on chrome, edge, and safari */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* scrolling handle */
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-gutter);
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-button-alt-hover-bg);
+}
+
+/* scrolling track/backgronund color */
+::-webkit-scrollbar-track {
+  background: var(--vp-button-alt-bg);
+}
+
+/* mathjax3.css */
+mjx-container {
+  display: inline-block;
+  margin: auto 2px -2px;
+}
+
+mjx-container > svg {
+  margin: auto;
+}
+
+
+
+/* 搜索 */
+.modal-back {
+  background: rgba(120, 129, 147, .22);
+  transition: all 0.35s;
+  backdrop-filter: blur(10px);
+}
+
+.modal-back .DocSearch-Form  {
+  background: var(--docsearch-modal-background);
+  box-shadow: unset !important;
+  max-width: var(--docsearch-modal-width);
+}
+
+.modal-back .flex-logo {
+  display: none !important
+}
+
+.modal-back .DocSearch-Input {
+  border: 0px solid var(--vp-c-brand);
+  background-color: unset !important;
+}
+
+.DocSearch-Hit a {
+  background: var(--docsearch-hit-background);
+  border-radius: 4px;
+  box-shadow: unset !important;
+}
+
+.DocSearch-Hit-source,
+.DocSearch-HitsFooter {
+  display: none;
+}
+
+.DocSearch-NoResults-Prefill-List {
+  display: none;
+}
+.vp-doc ul, .vp-doc ol {
+  padding-left: 1.8rem;
+}
+
+/* 搜索 */
+.DocSearch-Button {
+  border-radius: 4rem;
+}
+
+.DocSearch-Button-Keys {
+  margin-left: 2rem;
+
+}
+
+.DocSearch.DocSearch-Container, .VPLocalSearchBox .backdrop {
+  background: rgba(120, 129, 147, .22) !important;
+  transition: all 0.35s;
+  backdrop-filter: blur(10px);
+}
+
+
+.DocSearch-Modal {
+  background: var(--docsearch-modal-background);
+  box-shadow: unset !important;
+  max-width: var(--docsearch-modal-width);
+}
+
+.DocSearch-Footer {
+  display: none !important
+}
+
+.DocSearch-Form {
+  border: 0px solid var(--vp-c-brand);
+  background-color: unset !important;
+}
+
+.DocSearch-Hit a {
+  background: var(--docsearch-hit-background);
+  border-radius: 4px;
+  box-shadow: unset !important;
+}
+
+.DocSearch-Hit-source,
+.DocSearch-HitsFooter {
+  display: none;
+}
+
+.DocSearch-NoResults-Prefill-List {
+  display: none;
+}
+
+.VPLocalSearchBox .shell {
+  /* max-width: var(--docsearch-modal-width);  */
+}
+.search-bar, .VPLocalSearchBox .shell .result {
+  border: unset !important;
+}
+
+/* 左边栏 */
+.VPSidebar {
+  padding-left: 32px !important;
+  width: unset !important;
+}
+
+.VPNavBarTitle .title {
+  font-size: 1.8rem;
+}
+
+
+.VPNavBar.has-sidebar .title {
+  padding-left: unset !important;
+}
+
+.VPNavBar {
+  border-bottom: 0;
+}
+
+.VPNav {
+  border-bottom: 1px solid #eee;
+}
+
+.VPNav .content {
+  border-bottom: 1px solid #eee;
+}
+.VPNavBarTitle {
+  border-bottom: 1px solid #eee !important;
+}
+

@@ -1,15 +1,14 @@
-import type { HeadConfig } from 'vitepress';
-import { metaData } from './constants';
+import type { HeadConfig } from 'vitepress'
+import { metaData } from './constants'
 
 export const head: HeadConfig[] = [
   ['link', { rel: 'icon', href: '/favicon.ico' }],
-  ['meta', { name: 'author', content: 'Charles7c' }],
-  ['meta', { name: 'keywords', content: '查尔斯的知识库, 知识库, 博客, Charles7c' }],
+  ['meta', { name: 'author', content: 'huoranger' }],
+  ['meta', { name: 'keywords', content: '清风徐来的知识库, 知识库, 博客, huoranger' }],
 
   ['meta', { name: 'HandheldFriendly', content: 'True' }],
   ['meta', { name: 'MobileOptimized', content: '320' }],
   ['meta', { name: 'theme-color', content: '#3c8772' }],
-  ['meta', { name: 'baidu_union_verify', content: '19bd8ed3f02a91e23043efdf1d823107' }],
 
   ['meta', { property: 'og:type', content: 'website' }],
   ['meta', { property: 'og:locale', content: metaData.locale }],
@@ -28,33 +27,17 @@ export const head: HeadConfig[] = [
     s.parentNode.insertBefore(hm, s);
   })();`],
   // 页面访问量统计
-  ['script', {}, `
-  window.addEventListener('load', function() {
-    let oldHref = document.location.href, bodyDOM = document.querySelector('body');
-    const observer = new MutationObserver(function(mutations) {
-      if (oldHref != document.location.href) {
-        oldHref = document.location.href;
-        getPv()
-        window.requestAnimationFrame(function() {
-          let tmp = document.querySelector('body');
-          if(tmp != bodyDOM) {
-            bodyDOM = tmp;
-            observer.observe(bodyDOM, config);
-          }
-        })
-      }
-    });
-    const config = {
-      childList: true,
-      subtree: true
-    };
-    observer.observe(bodyDOM, config);
-    getPv()
-  }, true);
-
-  function getPv() {
-    xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://api.charles7c.top/blog/pv?pageUrl=' + location.href);
-    xhr.send();
-  }`]
-];
+  // ['script', {}, `var pageUrl = location.href;
+  // (function() {
+  //   xhr = new XMLHttpRequest();
+  //   xhr.open('GET', 'https://api.charles7c.top/blog/pv?pageUrl=' + pageUrl);
+  //   xhr.send();
+  // })();`]
+  /*['script', {}, `var pageUrl = location.href;
+  (function() {
+    var pv = document.createElement("script");
+    pv.src = "https://api.charles7c.top/blog/pv?pageUrl=" + pageUrl;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(pv, s);
+  })();`]*/
+]
