@@ -36,7 +36,7 @@ Kafka 是一个使用 Scala 语言编写的基于 ZooKeeper 的高吞吐量低�
 
 Kafka的集群架构如下图所示。生产者使用 Push 模式将消息发送到 Broker，而消费者使用 Pull 模式从 Broker 订阅并消费消息。
 
-![图片.png](../../../public/img/middleware/1661481212923-44c8d229-898f-40d5-979b-caf513c4c098.png)
+<!-- ![图片.png](../../../public/img/middleware/1661481212923-44c8d229-898f-40d5-979b-caf513c4c098.png) -->
 
 ### 主题与分区
 
