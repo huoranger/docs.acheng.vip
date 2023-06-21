@@ -1,11 +1,7 @@
 ---
 title: MySQL 存储引擎
 date: 2022-11-29 14:14:44
-categories:
-  - 数据库
-tags:
-  - MySQL
-  - 数据库
+isCopyright: false
 ---
 
 # MySQL 存储引擎

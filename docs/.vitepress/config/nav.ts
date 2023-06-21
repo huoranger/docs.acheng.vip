@@ -21,12 +21,12 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '数据库',
     items: [
-      { text: 'MySQL', link: '/courses/database/01-MySQL/01-MySQL基础/01-MySQL基础', activeMatch: '/courses/database/01-MySQL/01-MySQL基础/01-MySQL基础' },
-      { text: '非关系型数据库', link: '/courses/database/01-MySQL/01-MySQL基础', activeMatch: '/courses/database/01-MySQL/01-MySQL基础' },
+      { text: 'MySQL', link: '/courses/database/01-MySQL/01-MySQL基础/01-MySQL基础', activeMatch: '/courses/database/MySQL/' },
+      { text: '非关系型数据库', link: '/courses/database/01-MySQL/01-MySQL基础', activeMatch: '/courses/database/NoSQL' },
     ],
     activeMatch: '/courses/database'
   },
-  { text: '运维',  link: '/courses/operation/01-Linux/01-Linux速成.md', activeMatch: '/courses/operation/'},
+  { text: '运维',  link: '/courses/operation/', activeMatch: '/courses/operation/'},
 
   { text: '面试突击',  link: '/courses/interview/01-后端面试/01-架构300讲', activeMatch: '/courses/interview/01-后端面试'},
 
