@@ -124,7 +124,7 @@ body {
 }
 
 code {
-    font-family:  SFMono,misans, SF Mono,Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-family:  SFMono,misans, SF Mono,Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
 }
 .VPDoc h1, .VPDoc h2,.VPDoc h3, .VPDoc h4, .VPDoc h5,.VPDoc h6 {
     font-family: SFMono, misans, "hmeng", hm, '思源宋体' !important;
