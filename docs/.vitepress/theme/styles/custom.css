@@ -1,3 +1,77 @@
+/* 灰度模式 */
+/*html {
+  filter: grayscale(95%);
+  -webkit-filter: grayscale(95%);
+  -moz-filter: grayscale(95%);
+  -ms-filter: grayscale(95%);
+  -o-filter: grayscale(95%);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=.95);
+}*/
+
+body {
+  font-size: 16px;
+}
+
+pre, code, kbd, samp {
+  font-family: var(--vp-font-family-mono);
+}
+
+.vp-doc h2 {
+  margin: 15px 0 0;
+  padding-top: 10px;
+  border-top: none;
+}
+
+.vp-doc h3,h4,h5 {
+  margin: 10px 0 0;
+}
+
+.vp-doc h4 {
+  font-size: 18px;
+}
+
+.VPDoc .content-container img {
+  border-radius: 5px;
+}
+
+/* slim scroll bar for windows based web browsers - works on firefox */
+* {
+  scrollbar-color: var(--vp-c-gutter) var(--vp-button-alt-bg);
+  scrollbar-width: thin;
+}
+
+/* slim scroll bar for windows based web browsers - works on chrome, edge, and safari */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* scrolling handle */
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-gutter);
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-button-alt-hover-bg);
+}
+
+/* scrolling track/backgronund color */
+::-webkit-scrollbar-track {
+  background: var(--vp-button-alt-bg);
+}
+
+/* mathjax3.css */
+mjx-container {
+  display: inline-block;
+  margin: auto 2px -2px;
+}
+
+mjx-container > svg {
+  margin: auto;
+}
+
+/* ========= ===========================================*/
 :root {
     --vp-nav-height: 72px;
 }
@@ -21,13 +95,36 @@
     src: url("/font/MiSans-Bold.ttf");
     font-weight: bold;
 }
+@font-face {
+  font-family: "misans";
+  src: url("/font/MiSans-Medium.ttf");
+}
+@font-face {
+  font-family: "SFMono";
+  src: url("/font/SFMonoMedium.woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "SFMono";
+  src: url("/font/SFMonoRegular.woff");
+  font-weight: 100;
+}
 
+@font-face {
+  font-family: "SFMono";
+  src: url("/font/SFMonoHeavy.woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "MisansMono";
+  src: url("/font/Misans-Mono.ttf");
+}
 body {
-    font-family:  SF Mono, misans, "hmeng", hm, '思源宋体' !important;
+    font-family:  SFMono,misans, SF Mono, "hmeng", hm, '思源宋体' !important;
 }
 
 code {
-    font-family: ui-monospace, SFMono-Regular, 'SF Mono',misans, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-family:  SFMono,misans, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 .VPDoc h1, .VPDoc h2,.VPDoc h3, .VPDoc h4, .VPDoc h5,.VPDoc h6 {
     font-family: ubuntu, fira code, misans, "hmeng", hm, '思源宋体' !important;
@@ -162,6 +259,10 @@ body {
     padding-left: 32px !important;
     width: unset !important;
 }
+.VPNavBar.has-sidebar .content {
+  /* background: rgba(36,36,36,.7); */
+  backdrop-filter: saturate(50%) blur(8px);
+}
 .VPNavBar.has-sidebar .title {
     padding-left: 16px !important;
 }
@@ -175,21 +276,69 @@ body {
   }
 
   .VPNav {
-    border-bottom: 1px solid #eee;
+    /* border-bottom: 1px solid #2b2e34; */
 }
-
+.dark .VPNavBar.has-sidebar .content {
+  border-bottom: 1px solid #2b2e34;
+}
+.VPNavBar.has-sidebar .content {
+  border-bottom: 1px solid #eee;
+}
   .logo {
     height: 44px !important;
     margin-bottom: 0.4rem;
   }
   
-  .VPNavBar.has-sidebar .content {
-    backdrop-filter: saturate(50%) blur(8px) !important;
-    background: rgba(255, 255, 255, 0.7) !important;
-  }
 
-  .VPNav.no-sidebar {
-    -webkit-backdrop-filter: saturate(50%) blur(8px);
-    backdrop-filter: saturate(50%) blur(8px);
-    background: rgba(255, 255, 255, 0.7);
+  .VPNavBar.has-sidebar .curtain:before {
+    background: unset !important;
+   
+}
+
+.title {
+  border-bottom: unset !important;
+}
+
+.VPNavBar.has-sidebar .content{
+  padding-left: var(--vp-sidebar-width) !important;
+}
+
+.VPNavBar.has-sidebar .title[data-v-f8edd431] {
+  width: var(--vp-sidebar-width) !important;
+
+}
+/* 文章内容 */
+.VPContent.has-sidebar {
+  padding-left: var(--vp-sidebar-width) !important;
+}
+
+.VPDoc.has-aside .content-container{
+  max-width: 100% !important;
+}
+
+.VPDoc .container > .content {
+  padding: 0 0px 128px !important;
+}
+
+h1 {
+  padding-top: 0px !important;
+}
+
+.VPNavBar.has-sidebar .content-body, .VPNavBar.fill .content-body {
+  background-color: unset !important;
+}
+
+.VPDocAsideOutline .content {
+  padding-left: 14px !important;
+}
+
+.main .text {
+  font-size: 1rem;
+  color: #999;
+  font-weight: bold;
+}
+
+/* 原创 */
+.arco-tag.arco-tag-checked.arco-tag-orangered {
+  border-radius: 6px;
 }

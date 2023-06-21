@@ -1,5 +1,5 @@
 <template>
-  <div class="copyright">
+  <div class="copyright" v-if="isCopyright">
     <div class="content">
       <div class="item">
         <svg class="icon" width="20" height="20" viewBox="0 0 1024 1024">
@@ -53,8 +53,9 @@
     authorLink: frontmatter.value?.authorLink ?? theme.value.articleMetadataConfig.authorLink,
     articleTitle: frontmatter.value?.articleTitle ?? frontmatter.value.title,
     articleLink: frontmatter.value?.articleLink ?? decodeURI(window.location.href),
+    isCopyright: frontmatter.value?.isCopyright ?? decodeURI(window.location.href),
   });
-  const { isOriginal, author, authorLink, articleTitle, articleLink } = toRefs(data);
+  const { isOriginal, author, authorLink, articleTitle, articleLink, isCopyright } = toRefs(data);
 </script>
 
 <style scoped>
