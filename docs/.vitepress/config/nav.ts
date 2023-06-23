@@ -2,19 +2,31 @@ import DefaultTheme from 'vitepress/theme'
 
 export const nav: DefaultTheme.Config['nav'] = [
   {
-    text: '后端',
+    text: '💭 学习圈子',
     items: [
-      { text: '基础', link: '/courses/backend/basic/index', activeMatch: '/courses/backend/basic/' },
-        { text: '框架', link: '/courses/backend/framework/index', activeMatch: '/categories/backend/framework/' },
+    { 
+      text: '后端开发', activeMatch: '/courses/backend/framework/',
+      items: [
+        {text: '常用框架', link: '/courses/backend/framework/index', activeMatch: 'courses/backend/framework'}
+      ]
+  
+    },
+    { 
+      text: '前端开发',  activeMatch: '/categories/backend/framework/',
+      items: [
+        {text: '三剑客', link: '/courses/frontend/framework/index', activeMatch: '/categories/backend/framework/'}
+      ]
+    },
         // { text: '中间件', link: '/courses/middleware/01-RabbitMQ/01-RabbitMQ入门', activeMatch: '/courses/middleware/' },
     ],
     activeMatch: '/courses/backend/basic/index'
   },
   {
-    text: '前端',
+    text: ' 🔥 专栏',
     items: [
-      { text: '基础', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
-        { text: '框架', link: '/categories/fragments/index', activeMatch: '/categories/fragments/' },
+      { text: '设计模式', link: '/courses/dp/index', activeMatch: '/courses/dp/index'
+    },
+        { text: '面试突击', link: '/courses/interview/index', activeMatch: '/courses/interview' },
     ],
     activeMatch: '/categories/frontend'
   },
@@ -28,7 +40,11 @@ export const nav: DefaultTheme.Config['nav'] = [
   },
   { text: '运维',  link: '/courses/operation/', activeMatch: '/courses/operation/'},
 
-  { text: '面试突击',  link: '/courses/interview/01-后端面试/01-架构300讲', activeMatch: '/courses/interview/01-后端面试'},
+  { text: '项目', activeMatch: '/courses/project',
+    items: [
+      { text: '若依', link: '/courses/project/ruoyi/index', activeMatch: '/courses/project/ruoyi/' },
+    ],
+  },
 
   // {
   //   text: '其他',

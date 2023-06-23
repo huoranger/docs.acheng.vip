@@ -4,10 +4,11 @@ author: RudeCrab
 date: 2022-11-30 12:14:44
 isOriginal: false
 editLink: false
-articleLink: https://mp.weixin.qq.com/s/_4MFrQSYOIGYRdDGOJPDKQ
+articleLink: https://zhuanlan.zhihu.com/p/342755411
 ---
 
-# 一文带你搞定Spring Security + JWT实现前后端分离下的认证授权
+# 搞定Spring Security + JWT前后端分离下的认证授权<Badge type="tip" text="已读完" /> <!-- warning -->
+
 ## 前言
 
 关于认证和授权，R 之前已经写了两篇文章：
@@ -59,7 +60,12 @@ public void doFilter(ServletRequest request, ServletResponse response,
 
     ...省略其他代码
 }
+
 ```
+
+::: tip TODO
+为什么使用需要自己调用过滤器链？为何这样设计？
+:::
 
 我们可以看一下 Spring Security 默认会启用多少过滤器：
 
@@ -233,7 +239,7 @@ public class LoginController {
 
 是谁执行 **根据用户名查询出用户对象** 逻辑的呢？用户对象数据可以存在内存中、文件中、数据库中，你得确定好怎么查才行。这一部分就是交由 **`UserDetialsService`** 处理，该接口只有一个方法`loadUserByUsername(String username)`，通过用户名查询用户对象，默认实现是在内存中查询。
 
-那查询出来的 **用户对象** 又是什么呢？每个系统中的用户对象数据都不尽相同，咱们需要确认我们的用户数据是啥样的才行。Spring Security 中的用户数据则是由 **`UserDetails`**来体现，该接口中提供了账号、密码等通用属性。
+那查询出来的 **用户对象** 又是什么呢？每个系统中的用户对象数据都不尽相同，咱们需要确认我们的用户数据是啥样的才行。Spring Security 中的用户数据则是由 **`UserDetails`** 来体现，该接口中提供了账号、密码等通用属性。
 
 **对密码进行校验**大家可能会觉得比较简单，`if、else`搞定，就没必要用什么组件了吧？但框架毕竟是框架考虑的比较周全，除了`if、else`外还解决了密码加密的问题，这个组件就是 **`PasswordEncoder`**，负责密码加密与校验。
 
@@ -407,7 +413,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 `AuthenticationManager`校验所调用的三个组件我们就已经做好实现了！
 
-不知道大家注意到没有，当我们查询用户失败时或者校验密码失败时都会抛出 Spring Security 的自定义异常。这些异常不可能放任不管，Spring Security 对于这些异常都是在`ExceptionTranslationFilter`过滤器中进行处理（可以回顾一下前面的过滤器截图），而 **`AuthenticationEntryPoint`**则专门处理认证异常！
+不知道大家注意到没有，当我们查询用户失败时或者校验密码失败时都会抛出 Spring Security 的自定义异常。这些异常不可能放任不管，Spring Security 对于这些异常都是在`ExceptionTranslationFilter`过滤器中进行处理（可以回顾一下前面的过滤器截图），而 **`AuthenticationEntryPoint`** 则专门处理认证异常！
 
 ### 认证异常处理器 AuthenticationEntryPoint
 
@@ -515,10 +521,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 4.  校验通过则将认证信息存入到上下文中 将`UserDetails`存入到`Authentication`，将`Authentication`存入到`SecurityContext`
 5.  如果认证失败则抛出异常 由`AuthenticationEntryPoint`处理
 
-刚才我们讲的认证方式都是基于`session`机制，认证后 Spring Security 会将`Authentication`存入到`session`中，Key 为`HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY`。也就是说，你完全可以通过如下方式获取`Authentication`：
+刚才我们讲的认证方式都是基于`session`机制，认证后 Spring Security 会将`SecurityContext`存入到`session`中，Key 为`HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY`。也就是说，你完全可以通过如下方式获取`Authentication`：
 
 ```java
-Authentication = (Authentication)session.getAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY)
+Authentication = ((SecurityContext) session.getAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY)).getAuthentication();
 ```
 
 当然，官方还是不推荐这样直接操作的，因为统一通过`SecurityContextHolder`操作更利于管理！使用`SecurityContextHolder`除了获取当前用户外，退出登录的操作也是很方便的：

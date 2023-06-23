@@ -8,6 +8,7 @@
   filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=.95);
 }*/
 
+
 body {
   font-size: 16px;
 }
@@ -281,9 +282,9 @@ body {
 .dark .VPNavBar.has-sidebar .content {
   border-bottom: 1px solid #2b2e34;
 }
-.VPNavBar.has-sidebar .content {
+/* .VPNavBar.has-sidebar .content {
   border-bottom: 1px solid #eee;
-}
+} */
   .logo {
     height: 44px !important;
     margin-bottom: 0.4rem;
@@ -341,4 +342,57 @@ h1 {
 /* 原创 */
 .arco-tag.arco-tag-checked.arco-tag-orangered {
   border-radius: 6px;
+}
+
+/* 代码块 */
+html:not(.dark) .vp-doc [class*='language-'] code {
+  background-color: #292d3e;
+}
+
+:root:not(.dark) .vp-adaptive-theme {
+  --vp-code-block-bg: #292d3e;
+}
+
+.vp-doc [class*='language-'] > button.copy {
+  background-color: #292d3e;
+}
+
+html:not(.dark) .vp-doc [class*='language-'] > button.copy:hover, .vp-doc [class*='language-'] > button.copy.copied {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+html:not(.dark) .vp-doc [class*='language-'] > button.copy.copied, .vp-doc [class*='language-'] > button.copy:hover.copied {
+  border-radius: 0 4px 4px 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  background-image: var(--vp-icon-copied);
+}
+html:not(.dark) .vp-doc [class*='language-'] > button.copy.copied::before {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+:root:not(.dark) .vp-adaptive-theme {
+  --vp-code-copy-code-hover-bg: rgba(255, 255, 255, 0.05);
+  --vp-code-copy-code-active-text: rgba(235,235,235, 0.6);
+}
+html:not(.dark) .vp-doc [class*='language-'] > span.lang {
+
+  color: rgba(235,235,235, 0.38);
+}
+
+.vp-doc [class*='language-'] .line span {
+
+  font-style: normal !important;
+}
+
+
+html:not(.dark) .VPNav {
+      backdrop-filter: saturate(50%) blur(8px);
+    background: rgba(255, 255, 255, .45);
+}
+
+.DocSearch {
+  background: unset !important;
+}
+
+.copyright .content {
+  padding-left: 0px !important;
 }
