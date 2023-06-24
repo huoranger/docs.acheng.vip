@@ -396,3 +396,7 @@ html:not(.dark) .VPNav {
 .copyright .content {
   padding-left: 0px !important;
 }
+
+.copyright {
+  background-color: unset !important;
+}
