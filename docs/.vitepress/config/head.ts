@@ -17,6 +17,11 @@ export const head: HeadConfig[] = [
   ['meta', { property: 'og:site', content: metaData.site }],
   ['meta', { property: 'og:site_name', content: metaData.title }],
   ['meta', { property: 'og:image', content: metaData.image }],
+  [
+    "link",
+    { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" },
+  ],
+  ["script", { src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" }],
 
   // 百度统计代码：https://tongji.baidu.com
   ['script', {}, `var _hmt = _hmt || [];

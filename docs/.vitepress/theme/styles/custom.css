@@ -121,14 +121,15 @@ mjx-container > svg {
   src: url("/font/Misans-Mono.ttf");
 }
 body {
-    font-family:  SFMono,misans, SF Mono, "hmeng", hm, '思源宋体' !important;
+    font-family: misans, SF Mono, "hmeng", hm, '思源宋体' !important;
+    font-weight: 100;
 }
 
 code {
-    font-family:  SFMono,misans, SF Mono,Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
+    font-family:  SF Mono,Menlo, misans, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
 }
 .VPDoc h1, .VPDoc h2,.VPDoc h3, .VPDoc h4, .VPDoc h5,.VPDoc h6 {
-    font-family: SFMono, misans, "hmeng", hm, '思源宋体' !important;
+    font-family: SF Mono, misans, "hmeng", hm, '思源宋体' !important;
 }
 /* .aside,.VPSidebar {
 
@@ -160,189 +161,193 @@ body {
 .main img {
     border: 1px solid #e5e7eb;
   }
-  
+
+@media (min-width: 960px) {
 /* 搜索 */
 .modal-back {
-    background: rgba(120, 129, 147, .22);
-    transition: all 0.35s;
-    backdrop-filter: blur(10px);
-  }
-  
-  .modal-back .DocSearch-Form  {
-    background: var(--docsearch-modal-background);
-    box-shadow: unset !important;
-    max-width: var(--docsearch-modal-width);
-  }
-  
-  .modal-back .flex-logo {
-    display: none !important
-  }
-  
-  .modal-back .DocSearch-Input {
-    border: 0px solid var(--vp-c-brand);
-    background-color: unset !important;
-  }
-  
-  .DocSearch-Hit a {
-    background: var(--docsearch-hit-background);
-    border-radius: 4px;
-    box-shadow: unset !important;
-  }
-  
-  .DocSearch-Hit-source,
-  .DocSearch-HitsFooter {
-    display: none;
-  }
-  
-  .DocSearch-NoResults-Prefill-List {
-    display: none;
-  }
-  .vp-doc ul, .vp-doc ol {
-    padding-left: 1.8rem;
-  }
-  
-  /* 搜索 */
-  .DocSearch-Button {
-    border-radius: 4rem;
-  }
-  
-  .DocSearch-Button-Keys {
-    margin-left: 2rem;
-  
-  }
-  
-  .DocSearch.DocSearch-Container, .VPLocalSearchBox .backdrop {
-    background: rgba(120, 129, 147, .22) !important;
-    transition: all 0.35s;
-    backdrop-filter: blur(10px);
-  }
-  
-  
-  .DocSearch-Modal {
-    background: var(--docsearch-modal-background);
-    box-shadow: unset !important;
-    max-width: var(--docsearch-modal-width);
-  }
-  
-  .DocSearch-Footer {
-    display: none !important
-  }
-  
-  .DocSearch-Form {
-    border: 0px solid var(--vp-c-brand);
-    background-color: unset !important;
-  }
-  
-  .DocSearch-Hit a {
-    background: var(--docsearch-hit-background);
-    border-radius: 4px;
-    box-shadow: unset !important;
-  }
-  
-  .DocSearch-Hit-source,
-  .DocSearch-HitsFooter {
-    display: none;
-  }
-  
-  .DocSearch-NoResults-Prefill-List {
-    display: none;
-  }
-  
-  .VPLocalSearchBox .shell {
-    /* max-width: var(--docsearch-modal-width);  */
-  }
-  .search-bar, .VPLocalSearchBox .shell .result {
-    border: unset !important;
-  }
+  background: rgba(120, 129, 147, .22);
+  transition: all 0.35s;
+  backdrop-filter: blur(10px);
+}
 
-  /* 左边栏 */
+.modal-back .DocSearch-Form  {
+  background: var(--docsearch-modal-background);
+  box-shadow: unset !important;
+  max-width: var(--docsearch-modal-width);
+}
+
+.modal-back .flex-logo {
+  display: none !important
+}
+
+.modal-back .DocSearch-Input {
+  border: 0px solid var(--vp-c-brand);
+  background-color: unset !important;
+}
+
+.DocSearch-Hit a {
+  background: var(--docsearch-hit-background);
+  border-radius: 4px;
+  box-shadow: unset !important;
+}
+
+.DocSearch-Hit-source,
+.DocSearch-HitsFooter {
+  display: none;
+}
+
+.DocSearch-NoResults-Prefill-List {
+  display: none;
+}
+.vp-doc ul, .vp-doc ol {
+  padding-left: 1.5rem;
+}
+
+/* 搜索 */
+.DocSearch-Button {
+  border-radius: 4rem;
+}
+
+.DocSearch-Button-Keys {
+  margin-left: 2rem;
+
+}
+
+.DocSearch.DocSearch-Container, .VPLocalSearchBox .backdrop {
+  background: rgba(120, 129, 147, .22) !important;
+  transition: all 0.35s;
+  backdrop-filter: blur(10px);
+}
+
+
+.DocSearch-Modal {
+  background: var(--docsearch-modal-background);
+  box-shadow: unset !important;
+  max-width: var(--docsearch-modal-width);
+}
+
+.DocSearch-Footer {
+  display: none !important
+}
+
+.DocSearch-Form {
+  border: 0px solid var(--vp-c-brand);
+  background-color: unset !important;
+}
+
+.DocSearch-Hit a {
+  background: var(--docsearch-hit-background);
+  border-radius: 4px;
+  box-shadow: unset !important;
+}
+
+.DocSearch-Hit-source,
+.DocSearch-HitsFooter {
+  display: none;
+}
+
+.DocSearch-NoResults-Prefill-List {
+  display: none;
+}
+
+.VPLocalSearchBox .shell {
+  /* max-width: var(--docsearch-modal-width);  */
+}
+.search-bar, .VPLocalSearchBox .shell .result {
+  border: unset !important;
+}
+
+/* 左边栏 */
 .VPSidebar {
-    padding-left: 32px !important;
-    width: unset !important;
+  padding-left: 32px !important;
+  width: unset !important;
 }
 .VPNavBar.has-sidebar .content {
-  /* background: rgba(36,36,36,.7); */
-  backdrop-filter: saturate(50%) blur(8px);
+/* background: rgba(36,36,36,.7); */
+backdrop-filter: saturate(50%) blur(8px);
 }
-.VPNavBar.has-sidebar .title {
-    padding-left: 16px !important;
+.VPNavBar.has-sidebar >.container > .title {
+  padding-left: 16px !important;
 }
 .VPNavBar {
-    /* height: 72px; */
-    height: var(--vp-nav-height-desktop);
-    border-bottom: 0;
+  /* height: 72px; */
+  height: var(--vp-nav-height-desktop);
+  border-bottom: 0;
 }
 .VPNavBarTitle .title {
-    font-size: 1.8rem;
-  }
+  font-size: 1.8rem;
+}
 
-  .VPNav {
-    /* border-bottom: 1px solid #2b2e34; */
+.VPNav {
+  /* border-bottom: 1px solid #2b2e34; */
 }
 .dark .VPNavBar.has-sidebar .content {
-  border-bottom: 1px solid #2b2e34;
+border-bottom: 1px solid #2b2e34;
 }
 /* .VPNavBar.has-sidebar .content {
-  border-bottom: 1px solid #eee;
+border-bottom: 1px solid #eee;
 } */
-  .logo {
-    height: 44px !important;
-    margin-bottom: 0.4rem;
-  }
-  
+.logo {
+  height: 44px !important;
+  margin-bottom: 0.4rem;
+}
 
-  .VPNavBar.has-sidebar .curtain:before {
-    background: unset !important;
-   
+
+.VPNavBar.has-sidebar .curtain:before {
+  background: unset !important;
+ 
 }
 
 .title {
-  border-bottom: unset !important;
+border-bottom: unset !important;
 }
 
 .VPNavBar.has-sidebar .content{
-  padding-left: var(--vp-sidebar-width) !important;
+padding-left: var(--vp-sidebar-width) !important;
 }
 
 .VPNavBar.has-sidebar .title[data-v-f8edd431] {
-  width: var(--vp-sidebar-width) !important;
+width: var(--vp-sidebar-width) !important;
 
 }
 /* 文章内容 */
 .VPContent.has-sidebar {
-  padding-left: var(--vp-sidebar-width) !important;
+padding-left: var(--vp-sidebar-width) !important;
 }
 
 .VPDoc.has-aside .content-container{
-  max-width: 100% !important;
+max-width: 100% !important;
 }
 
 .VPDoc .container > .content {
-  padding: 0 0px 128px !important;
+padding: 0 0px 128px !important;
 }
 
 h1 {
-  margin-top: 0px !important;
+margin-top: 0px !important;
 }
 
 .VPNavBar.has-sidebar .content-body, .VPNavBar.fill .content-body {
-  background-color: unset !important;
+background-color: unset !important;
 }
 
 .VPDocAsideOutline .content {
-  padding-left: 14px !important;
+padding-left: 14px !important;
 }
 
 .main .text {
-  font-size: 1rem;
-  color: #999;
-  font-weight: bold;
+font-size: 1rem;
+color: #999;
+font-weight: bold;
 }
 
 /* 原创 */
 .arco-tag.arco-tag-checked.arco-tag-orangered {
-  border-radius: 6px;
+border-radius: 6px;
 }
+}
+
+/* ================================= */
 
 /* 代码块 */
 html:not(.dark) .vp-doc [class*='language-'] code {
@@ -385,8 +390,8 @@ html:not(.dark) .vp-doc [class*='language-'] > span.lang {
 
 
 html:not(.dark) .VPNav {
-      backdrop-filter: saturate(50%) blur(8px);
-    background: rgba(255, 255, 255, .45);
+      /* backdrop-filter: saturate(50%) blur(8px);
+    background: rgba(255, 255, 255, .45); */
 }
 
 .DocSearch {
@@ -399,4 +404,29 @@ html:not(.dark) .VPNav {
 
 .copyright {
   background-color: unset !important;
+}
+
+@media (min-width: 1440px) {
+  .VPNavBar.has-sidebar >.container >.title {
+    width: var(--vp-sidebar-width) !important;
+  }
+  .VPContent.has-sidebar {
+    padding-right: calc((100vw - var(--vp-layout-max-width)) / 10) !important;
+  }
+}
+
+/* logo */
+html:not(.dark) .curtain {
+  background: rgb(255,255,255);
+}
+
+@media (min-width: 960px) {
+  .curtain {
+    top: -72px;
+  }
+}
+
+html:not(.dark) > .VPNav:has(.has-sidebar) {
+  backdrop-filter: saturate(50%) blur(8px) !important;
+  background: rgba(255,255,255,.45) !important;
 }

@@ -7,6 +7,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     { 
       text: '后端开发', activeMatch: '/courses/backend/framework/',
       items: [
+        {text: '基础知识', link: '/courses/backend/base/index', activeMatch: 'courses/backend/base'},
         {text: '常用框架', link: '/courses/backend/framework/index', activeMatch: 'courses/backend/framework'}
       ]
   

@@ -21,6 +21,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
 
     '/courses/backend/basic/': getItems("courses/backend/basic"),
     '/courses/backend/framework/': getItems("courses/backend/framework"),
+    '/courses/backend/base/': getItems("courses/backend/base"),
     
 }
 
