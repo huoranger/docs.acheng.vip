@@ -10,7 +10,7 @@
 
 
 body {
-  font-size: 16px;
+  font-size: 15.5px;
 }
 
 pre, code, kbd, samp {
@@ -125,11 +125,11 @@ body {
     font-weight: 100;
 }
 
-code {
+.language-properties code {
     font-family:  SF Mono,Menlo, misans, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
 }
 .VPDoc h1, .VPDoc h2,.VPDoc h3, .VPDoc h4, .VPDoc h5,.VPDoc h6 {
-    font-family: SF Mono, misans, "hmeng", hm, '思源宋体' !important;
+    font-family: misans, SF Mono, "hmeng", hm, '思源宋体' !important;
 }
 /* .aside,.VPSidebar {
 
@@ -422,7 +422,7 @@ html:not(.dark) .curtain {
 
 @media (min-width: 960px) {
   .curtain {
-    top: -72px;
+    top: -72px !important;
   }
 }
 
@@ -430,3 +430,14 @@ html:not(.dark) > .VPNav:has(.has-sidebar) {
   backdrop-filter: saturate(50%) blur(8px) !important;
   background: rgba(255,255,255,.45) !important;
 }
+
+
+/* 自定义块的样式 */
+.custom-block {
+  border-radius: 5px;
+}
+/* .custom-block.warning {
+  border-color: transparent;
+  color: rgba(60, 60, 67);
+  background-color: rgba(234, 179, 8, .14);
+} */

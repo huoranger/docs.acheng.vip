@@ -8,9 +8,10 @@ export const nav: DefaultTheme.Config['nav'] = [
       text: '后端开发', activeMatch: '/courses/backend/framework/',
       items: [
         {text: '基础知识', link: '/courses/backend/base/index', activeMatch: 'courses/backend/base'},
-        {text: '常用框架', link: '/courses/backend/framework/index', activeMatch: 'courses/backend/framework'}
+        {text: '常用框架', link: '/courses/backend/framework/index', activeMatch: 'courses/backend/framework'},
+        {text: '中间件', link: '/courses/backend/middleware/index', activeMatch: 'courses/backend/middleware'}
       ]
-  
+
     },
     { 
       text: '前端开发',  activeMatch: '/categories/backend/framework/',
